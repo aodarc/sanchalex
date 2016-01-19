@@ -1,0 +1,119 @@
+html, body {
+    background: #baccc0;
+    color: #0f0f0f;
+    height: 100%; /*Fix footer*/
+    font-family: Comic Sans, Comic Sans MS, cursive;
+    font-size: 15px ;
+}
+
+/*Fix footer*/
+.wrapper {
+position: relative;
+min-height: 100%;
+box-sizing: border-box;
+padding-bottom: 69px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 69px; /* .push must be the same height as .footer */
+    background-color: rgba(0, 0, 0, 0.71);
+} /*Fix footer*/
+
+header .jumbotron{
+    height: 205px;
+    padding-top: 50px;
+    padding-left: 60px;
+    background-image: url(../img/header.jpg);
+    font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
+    margin-bottom: 0px;
+}
+
+#nav{
+    background-color: rgba(0, 0, 0, 0.71);
+}
+
+
+/*Dropdown Login*/
+#login-dp{
+    min-width: 250px;
+    padding: 14px 14px 0;
+    overflow:hidden;
+    background-color: rgba(255, 255, 255, 0.95);
+}
+#login-dp .help-block{
+    font-size:12px
+}
+#login-dp .bottom{
+    background-color:rgba(255,255,255,.8);
+    border-top:1px solid #ddd;
+    clear:both;
+    padding:14px;
+}
+#login-dp .social-buttons{
+    margin:12px 0
+}
+#login-dp .social-buttons a{
+    width: 49%;
+}
+#login-dp .form-group {
+    margin-bottom: 10px;
+}
+.btn-fb{
+    color: #fff;
+    background-color:#3b5998;
+}
+.btn-fb:hover{
+    color: #fff;
+    background-color:#496ebc
+}
+.btn-tw{
+    color: #fff;
+    background-color:#55acee;
+}
+.btn-tw:hover{
+    color: #fff;
+    background-color:#59b5fa;
+}
+@media(max-width:768px){
+    #login-dp{
+        background-color: inherit;
+        color: #fff;
+    }
+    #login-dp .bottom{
+        background-color: inherit;
+        border-top:0 none;
+    }
+}
+/*Dropdown Login*/
+
+
+main > .container {
+    margin-bottom: 30px;
+}
+
+.slider{
+    margin-bottom: 30px;
+    width: 100%;
+    padding: 0px;
+}
+
+.sidebar-module{
+    padding: 10px 15px 20px 40px;
+    margin-top: 50px;
+    background-color: rgba(250, 255, 255, 0.7);
+    border-radius: 10px;
+}
+.sidebar-module a{
+    color: #0d6292;
+    font-style: italic;
+}
+.sidebar-module h4{
+    color: #0f0f0f;
+}
+
+.comment-form{
+    resize: none;
+}

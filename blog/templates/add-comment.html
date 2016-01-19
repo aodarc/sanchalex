@@ -1,0 +1,20 @@
+{% extends 'main.html' %}
+
+{% block main%}
+    <div class="panel panel-default">
+        <div class="panel-heading glyphicon"><span class="glyphicon glyphicon-user" aria-hidden="true"> UserName</span></div>
+        <div class="panel-body">
+            <div class="form-group">
+                <form class="form-horizontal" action="{% url 'test_form' %}" method="get" id="comment-form">
+                    {{ form.text.errors }}
+                    {{ form.text.label_tag }}
+                    <textarea class="form-control comment-form input-lg" name="{{ form.text.name }}" rows="5" id="{{ form.text.id_for_label }}"></textarea>
+                </form>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-default" form="comment-form" type="reset">Cancel</button>
+                <button class="btn btn-primary" form="comment-form" type="submit">Submit</button>
+            </div>
+        </div>
+    </div>
+{% endblock %}
