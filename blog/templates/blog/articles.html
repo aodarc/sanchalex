@@ -1,0 +1,11 @@
+{% extends 'main.html' %}
+{% block main %}
+    {% for article in articles %}
+        <article>
+            <header>
+                <h2>{{ article.title }}</h2>
+            </header>
+            {{ article.text|slice:":600" }}....
+        </article>
+    {% endfor %}
+{% endblock %}

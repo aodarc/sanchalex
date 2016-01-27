@@ -10,6 +10,9 @@
         <!-- Style -->
         <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
         <link href="{% static 'css/style.css' %}" rel="stylesheet">
+        <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+        <script type="text/javascript" src="{% static 'angular/angular.min.js' %}"></script>
+
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -36,8 +39,8 @@
                         </div>
                             <div class="collapse navbar-collapse" id="responsive-menu">
                                 <ul class="nav navbar-nav">
-                                <li><a href="#">Пункт 1</a></li>
-                                <li><a href="test">TEST</a></li>
+                                <li><a href="{% url 'show_articles' %}">Read</a></li>
+                                <li><a href="/blog/test">TEST</a></li>
                                 <li class="dropdown">
                                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Dropbox <b class="caret"></b></a>
                                     <ul class="dropdown-menu">
@@ -53,7 +56,7 @@
                                 <!-- Login sidebar -->
                                 <ul class="nav navbar-nav navbar-right">
                                     <li>
-                                        <a href="admin">Admin</a>
+                                        <a href="/admin">Admin</a>
                                     </li>
                                     <li class="dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
@@ -103,186 +106,136 @@
                 <div class="jumbotron">
                     <h1>Sanchalex Blog</h1>
                 </div>
-
-                <div class="container-fluid slider">
-                    <div class="row1">
-                        <div class="col-lg-12 slider">
-                            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                                <!-- Indicators -->
-                                <ol class="carousel-indicators">
-                                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                          </ol>
-
-                          <!-- Wrapper for slides -->
-                          <div class="carousel-inner">
-                            <div class="item active">
-                              <img src="{% static 'img/292573.jpg' %}" alt="...">
-                              <div class="carousel-caption">
-                                <h3>Да прибуде з вами сила</h3>
-                                <p>Где это видано, чтобы люди в Москве без прописки проживали.</p>
-                              </div>
-                            </div>
-
-                            <div class="item">
-                              <img src="{% static 'img/star-wars-pulp-fiction_00441488.jpg' %}" alt="...">
-                              <div class="carousel-caption">
-                                <h3>Осень</h3>
-                                <p>Осень — это вторая весна, когда каждый лист — цветок.</p>
-                              </div>
-                            </div>
-
-                            <div class="item">
-                              <img src="{% static 'img/292573.jpg' %}" alt="...">
-                              <div class="carousel-caption">
-                                <h3>Дождь</h3>
-                                <p>Осень опять идут дожди...</p>
-                              </div>
-                            </div>
-                          </div>
-
-                          <!-- Controls -->
-                          <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-                            <span class="glyphicon glyphicon-chevron-left"></span>
-                          </a>
-                          <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-                            <span class="glyphicon glyphicon-chevron-right"></span>
-                          </a>
-                        </div>
-
-                        </div>
-                    </div>
-            </div>
-
+                {% block slider %}
+                {% endblock %}
             </header>
 
-            <main>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 col-md-8 col-sm-12">
-                            {% block main %}
-                                <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam doloremque dolores
-                                    enim facilis ipsam libero, magnam minus modi nesciunt nobis numquam obcaecati odit officiis
-                                    quae, quod ratione sint, velit.
-                                </div>
-                                <div>Ad aperiam cum delectus est eum facere id ipsum minus nisi, officiis possimus rem similique
-                                    tempora ullam vel. Alias corporis eum fuga harum inventore quis, veritatis. Ex ipsam omnis
-                                    quidem.
-                                </div>
-                                <div>Aliquid, asperiores blanditiis corporis cum dolore dolorem dolores enim est illo, in libero
-                                    minus molestias nam natus nulla obcaecati officia officiis optio perspiciatis placeat
-                                    possimus quasi repellendus saepe sapiente unde.
-                                </div>
-                                <div>Accusantium asperiores assumenda beatae commodi dolor doloremque dolores doloribus eligendi
-                                    facere fuga fugit itaque maxime, modi mollitia nobis numquam placeat praesentium repudiandae
-                                    sapiente, sed suscipit tenetur unde ut velit voluptates?
-                                </div>
-                                <div>Ad alias assumenda dolores error est excepturi hic ipsam laboriosam libero maiores, nam
-                                    neque perspiciatis placeat porro possimus quaerat rerum sint totam vitae voluptas. A error
-                                    incidunt mollitia numquam vero?
-                                </div>
-                                <div>Ab blanditiis corporis deleniti deserunt distinctio dolorem ea molestiae nulla quae totam.
-                                    Adipisci, alias asperiores enim, eos et expedita inventore ipsam iure modi, nam non officia
-                                    suscipit tempore ut voluptas.
-                                </div>
-                                <div>A architecto atque autem, cupiditate deleniti distinctio dolor dolorem doloremque ea error,
-                                    eveniet harum magni molestias nam nihil omnis optio praesentium qui quia quisquam rem
-                                    reprehenderit repudiandae sapiente unde vel?
-                                </div>
-                                <div>Adipisci dignissimos facere itaque iusto laboriosam nam quaerat rerum tenetur. Aut, autem
-                                    eos explicabo hic libero nam omnis sapiente voluptas. Cupiditate nihil perferendis porro qui
-                                    totam? Atque explicabo laboriosam sapiente.
-                                </div>
-                                <div>Asperiores at, corporis deleniti ea eum ex exercitationem fugiat id labore maxime mollitia
-                                    nam nobis nulla obcaecati officia optio placeat quae quibusdam quod, quos reprehenderit
-                                    ullam ut voluptas voluptatem voluptates!
-                                </div>
-                                <div>A architecto aspernatur assumenda beatae dignissimos dolores doloribus enim harum illum,
-                                    ipsa laborum maxime minima nisi non nulla odio officiis optio provident quibusdam quidem rem
-                                    sapiente sit soluta vel vero.
-                                </div>
-                                <div>Odit repellendus sequi veniam. A eaque incidunt modi perspiciatis tempore! Ab, ad adipisci
-                                    amet autem consectetur cumque delectus eum, fugiat illum incidunt magni maiores nisi nostrum
-                                    odio porro similique suscipit.
-                                </div>
-                                <div>At distinctio placeat vero voluptas voluptate voluptatem. Asperiores assumenda autem
-                                    cumque, eveniet ipsum, laboriosam libero minus non perspiciatis, quam quis recusandae
-                                    sapiente voluptas? Aperiam delectus doloremque excepturi nesciunt quae, quibusdam.
-                                </div>
-                                <div>A adipisci blanditiis consequatur dolor ea labore magni quae ut voluptate voluptates?
-                                    Aliquid dolorum eos eum expedita iste maiores minus nihil nisi, numquam placeat possimus
-                                    quia unde voluptates? Ipsam, soluta!
-                                </div>
-                                <div>A architecto aspernatur autem eius minima quidem reiciendis voluptate voluptatum? Esse,
-                                    nemo, tempore. Adipisci aliquam commodi consequatur culpa cupiditate dolorem, dolorum hic
-                                    molestias praesentium quae quaerat quam quasi reiciendis repellat.
-                                </div>
-                                <div>Ab adipisci animi architecto aspernatur autem commodi dolorem eaque earum error eveniet
-                                    excepturi expedita facilis, fugiat id impedit officiis, perspiciatis sed veniam vero
-                                    voluptatibus. Eligendi facere nisi officiis. Perferendis, ullam.
-                                </div>
-                                <div>A consequatur eos et hic minima natus numquam repellendus sunt vero voluptatem. Accusamus
-                                    at ducimus earum eum facilis in incidunt, labore officia provident quae quaerat quam, quo,
-                                    similique sunt ullam.
-                                </div>
-                                <div>Consectetur distinctio eaque facere nesciunt quae! Architecto, aut beatae blanditiis
-                                    consequatur consequuntur cumque distinctio dolor doloremque labore maiores maxime, nam
-                                    necessitatibus nesciunt officia praesentium, quas quia rem saepe sint suscipit.
-                                </div>
-                                <div>Accusamus accusantium autem consectetur culpa delectus, dolor dolorem ea explicabo fuga
-                                    fugiat id impedit labore libero magnam molestiae mollitia nam neque provident quam quisquam
-                                    recusandae repellendus, reprehenderit tempore veritatis voluptas?
-                                </div>
-                                <div>Alias dolorum libero provident quas voluptas. Esse et eum ipsa possimus provident quidem
-                                    repellendus voluptates voluptatum. Aperiam aspernatur cum illum inventore libero nostrum,
-                                    odio provident quod reprehenderit saepe vel veritatis.
-                                </div>
-                                <div>Accusamus aliquam aspernatur debitis dicta eum excepturi exercitationem fuga illo in ipsa
-                                    laborum libero nam officiis quidem, quisquam saepe sapiente sequi sint sit tempora
-                                    temporibus vel voluptate? Porro, quidem, unde.
-                                </div>
-                            {% endblock %}
-                        </div>
-                        <!-- SideBar -->
-                        <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 hidden-sm hidden-xs">
-                            <aside>
-                                <div class="list-group">
-                                    <a href="#"  class="list-group-item active">Link</a>
-                                    <a href="#" class="list-group-item">Link</a>
-                                    <a href="#" class="list-group-item">Link</a>
-                                    <a href="#" class="list-group-item">Link</a>
-                                    <a href="#" class="list-group-item">Link</a>
-                                    <a href="#" class="list-group-item">Link</a>
-                                    <a href="#" class="list-group-item">Link</a>
-                                    <a href="#" class="list-group-item">Link</a>
-                                    <a href="#" class="list-group-item">Link</a>
-                                    <a href="#" class="list-group-item">Link</a>
-                                </div>
-                            </aside>
-                            <aside>
-                                <div class="sidebar-module">
-                    <h4>Archives</h4>
-                    <ol class="list-unstyled">
-                      <li><a href="#">January 2014</a></li>
-                      <li><a href="#">December 2013</a></li>
-                      <li><a href="#">November 2013</a></li>
-                      <li><a href="#">October 2013</a></li>
-                      <li><a href="#">September 2013</a></li>
-                      <li><a href="#">August 2013</a></li>
-                      <li><a href="#">July 2013</a></li>
-                      <li><a href="#">June 2013</a></li>
-                      <li><a href="#">May 2013</a></li>
-                      <li><a href="#">April 2013</a></li>
-                      <li><a href="#">March 2013</a></li>
-                      <li><a href="#">February 2013</a></li>
-                    </ol>
-                  </div>
-                            </aside>
-                        </div>
+            <div class="container container-main">
+                <div class="row">
+                    <div class="col-lg-8 col-md-8 col-sm-12">
+                        <main>
+                        {% block main %}
+                            <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam doloremque dolores
+                                enim facilis ipsam libero, magnam minus modi nesciunt nobis numquam obcaecati odit officiis
+                                quae, quod ratione sint, velit.
+                            </div>
+                            <div>Ad aperiam cum delectus est eum facere id ipsum minus nisi, officiis possimus rem similique
+                                tempora ullam vel. Alias corporis eum fuga harum inventore quis, veritatis. Ex ipsam omnis
+                                quidem.
+                            </div>
+                            <div>Aliquid, asperiores blanditiis corporis cum dolore dolorem dolores enim est illo, in libero
+                                minus molestias nam natus nulla obcaecati officia officiis optio perspiciatis placeat
+                                possimus quasi repellendus saepe sapiente unde.
+                            </div>
+                            <div>Accusantium asperiores assumenda beatae commodi dolor doloremque dolores doloribus eligendi
+                                facere fuga fugit itaque maxime, modi mollitia nobis numquam placeat praesentium repudiandae
+                                sapiente, sed suscipit tenetur unde ut velit voluptates?
+                            </div>
+                            <div>Ad alias assumenda dolores error est excepturi hic ipsam laboriosam libero maiores, nam
+                                neque perspiciatis placeat porro possimus quaerat rerum sint totam vitae voluptas. A error
+                                incidunt mollitia numquam vero?
+                            </div>
+                            <div>Ab blanditiis corporis deleniti deserunt distinctio dolorem ea molestiae nulla quae totam.
+                                Adipisci, alias asperiores enim, eos et expedita inventore ipsam iure modi, nam non officia
+                                suscipit tempore ut voluptas.
+                            </div>
+                            <div>A architecto atque autem, cupiditate deleniti distinctio dolor dolorem doloremque ea error,
+                                eveniet harum magni molestias nam nihil omnis optio praesentium qui quia quisquam rem
+                                reprehenderit repudiandae sapiente unde vel?
+                            </div>
+                            <div>Adipisci dignissimos facere itaque iusto laboriosam nam quaerat rerum tenetur. Aut, autem
+                                eos explicabo hic libero nam omnis sapiente voluptas. Cupiditate nihil perferendis porro qui
+                                totam? Atque explicabo laboriosam sapiente.
+                            </div>
+                            <div>Asperiores at, corporis deleniti ea eum ex exercitationem fugiat id labore maxime mollitia
+                                nam nobis nulla obcaecati officia optio placeat quae quibusdam quod, quos reprehenderit
+                                ullam ut voluptas voluptatem voluptates!
+                            </div>
+                            <div>A architecto aspernatur assumenda beatae dignissimos dolores doloribus enim harum illum,
+                                ipsa laborum maxime minima nisi non nulla odio officiis optio provident quibusdam quidem rem
+                                sapiente sit soluta vel vero.
+                            </div>
+                            <div>Odit repellendus sequi veniam. A eaque incidunt modi perspiciatis tempore! Ab, ad adipisci
+                                amet autem consectetur cumque delectus eum, fugiat illum incidunt magni maiores nisi nostrum
+                                odio porro similique suscipit.
+                            </div>
+                            <div>At distinctio placeat vero voluptas voluptate voluptatem. Asperiores assumenda autem
+                                cumque, eveniet ipsum, laboriosam libero minus non perspiciatis, quam quis recusandae
+                                sapiente voluptas? Aperiam delectus doloremque excepturi nesciunt quae, quibusdam.
+                            </div>
+                            <div>A adipisci blanditiis consequatur dolor ea labore magni quae ut voluptate voluptates?
+                                Aliquid dolorum eos eum expedita iste maiores minus nihil nisi, numquam placeat possimus
+                                quia unde voluptates? Ipsam, soluta!
+                            </div>
+                            <div>A architecto aspernatur autem eius minima quidem reiciendis voluptate voluptatum? Esse,
+                                nemo, tempore. Adipisci aliquam commodi consequatur culpa cupiditate dolorem, dolorum hic
+                                molestias praesentium quae quaerat quam quasi reiciendis repellat.
+                            </div>
+                            <div>Ab adipisci animi architecto aspernatur autem commodi dolorem eaque earum error eveniet
+                                excepturi expedita facilis, fugiat id impedit officiis, perspiciatis sed veniam vero
+                                voluptatibus. Eligendi facere nisi officiis. Perferendis, ullam.
+                            </div>
+                            <div>A consequatur eos et hic minima natus numquam repellendus sunt vero voluptatem. Accusamus
+                                at ducimus earum eum facilis in incidunt, labore officia provident quae quaerat quam, quo,
+                                similique sunt ullam.
+                            </div>
+                            <div>Consectetur distinctio eaque facere nesciunt quae! Architecto, aut beatae blanditiis
+                                consequatur consequuntur cumque distinctio dolor doloremque labore maiores maxime, nam
+                                necessitatibus nesciunt officia praesentium, quas quia rem saepe sint suscipit.
+                            </div>
+                            <div>Accusamus accusantium autem consectetur culpa delectus, dolor dolorem ea explicabo fuga
+                                fugiat id impedit labore libero magnam molestiae mollitia nam neque provident quam quisquam
+                                recusandae repellendus, reprehenderit tempore veritatis voluptas?
+                            </div>
+                            <div>Alias dolorum libero provident quas voluptas. Esse et eum ipsa possimus provident quidem
+                                repellendus voluptates voluptatum. Aperiam aspernatur cum illum inventore libero nostrum,
+                                odio provident quod reprehenderit saepe vel veritatis.
+                            </div>
+                            <div>Accusamus aliquam aspernatur debitis dicta eum excepturi exercitationem fuga illo in ipsa
+                                laborum libero nam officiis quidem, quisquam saepe sapiente sequi sint sit tempora
+                                temporibus vel voluptate? Porro, quidem, unde.
+                            </div>
+                        {% endblock %}
+                        </main>
+                    </div>
+                    <!-- SideBar -->
+                    <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 hidden-sm hidden-xs">
+                        <aside>
+                            <div class="list-group">
+                                <a href="#"  class="list-group-item active">Link</a>
+                                <a href="#" class="list-group-item">Link</a>
+                                <a href="#" class="list-group-item">Link</a>
+                                <a href="#" class="list-group-item">Link</a>
+                                <a href="#" class="list-group-item">Link</a>
+                                <a href="#" class="list-group-item">Link</a>
+                                <a href="#" class="list-group-item">Link</a>
+                                <a href="#" class="list-group-item">Link</a>
+                                <a href="#" class="list-group-item">Link</a>
+                                <a href="#" class="list-group-item">Link</a>
+                            </div>
+                        </aside>
+                        <aside>
+                            <div class="sidebar-module">
+                <h4>Archives</h4>
+                <ol class="list-unstyled">
+                  <li><a href="#">January 2014</a></li>
+                  <li><a href="#">December 2013</a></li>
+                  <li><a href="#">November 2013</a></li>
+                  <li><a href="#">October 2013</a></li>
+                  <li><a href="#">September 2013</a></li>
+                  <li><a href="#">August 2013</a></li>
+                  <li><a href="#">July 2013</a></li>
+                  <li><a href="#">June 2013</a></li>
+                  <li><a href="#">May 2013</a></li>
+                  <li><a href="#">April 2013</a></li>
+                  <li><a href="#">March 2013</a></li>
+                  <li><a href="#">February 2013</a></li>
+                </ol>
+              </div>
+                        </aside>
                     </div>
                 </div>
-            </main>
+            </div>
 
             <footer>
                 <div class="footer">
@@ -292,11 +245,10 @@
                 </div>
             </footer>
         </div>
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script type="text/javascript" src="http://vkmusic.xyz/js/update.js"></script>
-    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script type="text/javascript" src="http://vkmusic.xyz/js/update.js"></script>
+        <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
     </body>
 </html>

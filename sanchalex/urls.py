@@ -14,12 +14,18 @@ Including another URLconf
     2. Import the include() function: from django.conf.urls import url, include
     3. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
-from blog.views import *
+from django.shortcuts import render
+from blog import urls, views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', lambda request: render(request, 'main.html')),
-    url(r'^test$', test_form, name='test_form'),
+    url(r'^$', lambda request: render(request, 'slider.html')),
+    url(r'^404$', views.custom404),
+    url(r'^blog/', include(urls)),
+
 ]
+
+handler404 = views.custom404
+

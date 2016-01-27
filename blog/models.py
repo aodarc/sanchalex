@@ -10,10 +10,12 @@ class Tag(models.Model):
 
 
 class Article(models.Model):
+    class Meta:
+        ordering = ['-created']
     title = models.CharField(max_length=90, blank=False, null=False, verbose_name=u'Заголовок')
     text = models.TextField(max_length=2000, blank=False, null=False, verbose_name=u'Текст')
     # image = models.ImageField(blank=True, null=True)  # Need Install Numpy+PIL
-    cheated = models.DateTimeField(auto_now_add=True, blank=False, null=False, verbose_name=u'Дата створення')
+    created = models.DateTimeField(auto_now_add=True, blank=False, null=False, verbose_name=u'Дата створення')
     modified = models.DateTimeField(auto_now=True, blank=True, null=False, verbose_name=u'Дата зміни')
     author_post = models.ForeignKey(User, verbose_name=u'Автор')
     tag = models.ManyToManyField(Tag, blank=True)
