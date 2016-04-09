@@ -18,14 +18,18 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from django.shortcuts import render
 from blog import urls, views
+from api.urls import router
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', lambda request: render(request, 'slider.html')),
+    url(r'^api/', include(router.urls)),
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^404$', views.custom404),
     url(r'^blog/', include(urls)),
 
 ]
+
 
 handler404 = views.custom404
 

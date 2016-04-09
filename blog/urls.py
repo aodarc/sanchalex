@@ -1,4 +1,4 @@
-from django.conf.urls import url, handler404
+from django.conf.urls import url, include
 from blog.views import *
 
 urlpatterns = [
